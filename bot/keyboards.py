@@ -71,7 +71,7 @@ ORDER_KEYBOARD = json.dumps(
 
 PIZZA_NAME_MAPPING = {
     "pizza_margherita": "Margherita",
-    "pizza_pepperoni": "Pepperoni", 
+    "pizza_pepperoni": "Pepperoni",
     "pizza_quattro_stagioni": "Quattro Stagioni",
     "pizza_capricciosa": "Capricciosa",
     "pizza_diavola": "Diavola",
@@ -80,7 +80,7 @@ PIZZA_NAME_MAPPING = {
 
 PIZZA_SIZE_MAPPING = {
     "size_small": "Small (25cm)",
-    "size_medium": "Medium (30cm)", 
+    "size_medium": "Medium (30cm)",
     "size_large": "Large (35cm)",
     "size_xl": "Extra Large (40cm)",
 }

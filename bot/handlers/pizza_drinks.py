@@ -3,17 +3,18 @@ import bot.telegram_client
 import bot.database_client
 from bot.handlers.handler import Handler, HandlerStatus
 
+
 class PizzaDrinksHandler(Handler):
     def can_handle(self, update: dict, state: str, order_json: dict) -> bool:
         if "callback_query" not in update:
             return False
-        
+
         if state != "WAIT_FOR_DRINKS":
             return False
-        
+
         callback_data = update["callback_query"]["data"]
         return callback_data.startswith("drink_")
-    
+
     def handle(self, update: dict, state: str, order_json: dict) -> HandlerStatus:
         telegram_id = update["callback_query"]["from"]["id"]
         callback_data = update["callback_query"]["data"]

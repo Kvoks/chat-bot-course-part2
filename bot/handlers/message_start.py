@@ -13,7 +13,7 @@ class MessageStart(Handler):
             and "text" in update["message"]
             and update["message"]["text"] == "/start"
         )
-    
+
     def handle(self, update: dict, state: str, data: dict) -> HandlerStatus:
         telegram_id = update["message"]["from"]["id"]
 

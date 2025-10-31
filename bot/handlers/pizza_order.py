@@ -2,17 +2,18 @@ import bot.telegram_client
 import bot.database_client
 from bot.handlers.handler import Handler, HandlerStatus
 
+
 class PizzaOrderHandler(Handler):
     def can_handle(self, update: dict, state: str, order_json: dict) -> bool:
         if "callback_query" not in update:
             return False
-        
+
         if state != "WAIT_FOR_ORDER_APPROVE":
             return False
-        
+
         callback_data = update["callback_query"]["data"]
         return callback_data.startswith("order_")
-    
+
     def handle(self, update: dict, state: str, order_json: dict) -> HandlerStatus:
         telegram_id = update["callback_query"]["from"]["id"]
         callback_data = update["callback_query"]["data"]
@@ -34,8 +35,7 @@ class PizzaOrderHandler(Handler):
             )
         else:
             order_summary = (
-                "The order was not accepted!\n\n"
-                "To re-order, press /start"
+                "The order was not accepted!\n\n" "To re-order, press /start"
             )
 
         bot.telegram_client.deleteMessage(

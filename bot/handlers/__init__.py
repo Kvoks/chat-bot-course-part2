@@ -13,12 +13,10 @@ def get_handlers() -> list[Handler]:
     return [
         DatabaseLogger(),
         EnsureUserExists(),
-
         MessageStart(),
         PizzaSlectionHandler(),
         PizzaSizeHandler(),
         PizzaDrinksHandler(),
         PizzaOrderHandler(),
-
         MessageEcho(),
     ]
