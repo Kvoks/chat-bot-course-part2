@@ -7,3 +7,4 @@ python -m bot
 # watch -n 1 'sqlite3 bot.sqlite -cmd ".mode box" "SELECT * FROM users"'
 # black .
 # ruff check .
+# PYTHONPATH=. pytest tests/ -v
