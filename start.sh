@@ -8,3 +8,4 @@ python -m bot
 # black .
 # ruff check .
 # PYTHONPATH=. pytest tests/ -v
+# psql -U postgres -h localhost -p 5432
