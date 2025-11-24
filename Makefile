@@ -64,7 +64,7 @@ postgres_stop:
 build:
 	docker build \
 	-t $(BOT_IMAGE) \
-	--platform linux/amd64 \
+	--platform linux/amd64,linux/arm64 \
 	-f Dockerfile \
 	.
 
@@ -77,7 +77,7 @@ run: docker_volume
 	  --name $(BOT_CONTAINER) \
 	  --restart unless-stopped \
 	  -e POSTGRES_HOST="$(POSTGRES_CONTAINER)" \
-	  -e POSTGRES_HOST_PORT="5432" \
+	  -e POSTGRES_HOST_PORT="$(POSTGRES_HOST_PORT)" \
 	  -e POSTGRES_USER="$(POSTGRES_USER)" \
 	  -e POSTGRES_PASSWORD="$(POSTGRES_PASSWORD)" \
 	  -e POSTGRES_DATABASE="$(POSTGRES_DATABASE)" \
