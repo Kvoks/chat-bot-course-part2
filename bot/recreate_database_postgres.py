@@ -7,4 +7,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.tun(main())
+    asyncio.run(main())

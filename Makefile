@@ -4,7 +4,7 @@ ACTIVATE_VENV := . $(VENV_DIR)/bin/activate
 $(VENV_DIR):
 	python3 -m venv $(VENV_DIR)
 	$(ACTIVATE_VENV) && pip install --upgrade pip
-	$(ACTIVATE_VENV) && pip install --requirements.txt
+	$(ACTIVATE_VENV) && pip install --requirement requirements.txt
 
 install: $(VENV_DIR)
 
@@ -64,7 +64,7 @@ postgres_stop:
 build:
 	docker build \
 	-t $(BOT_IMAGE) \
-	--platform linux/amd64,linux/arm64 \
+	--platform linux/amd64 \
 	-f Dockerfile \
 	.
 
